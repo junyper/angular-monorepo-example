@@ -4,26 +4,29 @@ import { axe } from 'jest-axe';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 
-const { render, snapshot } = OtusTestUtils;
-
 describe('AppComponent', () => {
   it(`should render the heading text`, async () => {
-    await render(AppComponent, { imports: [ AppModule ] });
+    await OtusTestUtils.render(
+      AppComponent, { imports: [ AppModule ] }
+    );
     const heading = await screen.findByText('Hello World');
     expect(heading).toBeInTheDocument();
-    await snapshot();
+    await OtusTestUtils.snapshot();
   });
   it(`should render the projected content`, async () => {
     const project = 'I am an example';
-    await render({
+    await OtusTestUtils.render({
       template: `<app-root>${project}</app-root>`,
       imports: [ AppModule ]
     });
     const content = await screen.findByText(project);
     expect(content).toBeInTheDocument();
+    await OtusTestUtils.snapshot();
   });
   it(`should be accessible`, async () => {
-    const { container } = await render(AppComponent, { imports: [ AppModule ] });
+    const { container } = await OtusTestUtils.render(
+      AppComponent, { imports: [ AppModule ] }
+    );
     expect(await axe(container)).toHaveNoViolations()
   });
 });
