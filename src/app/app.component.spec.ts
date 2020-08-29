@@ -8,6 +8,7 @@ describe('AppComponent', () => {
     await render(AppComponent, { imports: [ AppModule ] });
     const heading = await screen.findByText('Hello World');
     expect(heading).toBeInTheDocument();
+    await snapshot();
   });
   it(`should render the projected content`, async () => {
     const project = 'I am an example';

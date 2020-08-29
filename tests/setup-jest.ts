@@ -1,54 +1,16 @@
 import 'jest-preset-angular';
 import '@testing-library/jest-dom';
 
-import { render } from './render';
+import './polyfills';
+import './globals';
 
-global.render = render;
+// give tests more time as taking screenshots takes a while
+jest.setTimeout(50000);
 
+// force tests to fail w/ console errors
 global.console.warn = (message) => {
   throw message;
 };
-
 global.console.error = (message) => {
   throw message;
 };
-
-// jsdom polyfills:
-Object.defineProperty(window, 'CSS', { value: null });
-Object.defineProperty(window, 'getComputedStyle', {
-  value: () => {
-    return {
-      display: 'none',
-      appearance: ['-webkit-appearance'],
-      getPropertyValue: (prop) => {
-        return '';
-      },
-    };
-  },
-});
-
-Object.defineProperty(document, 'doctype', {
-  value: '<!DOCTYPE html>',
-});
-
-Object.defineProperty(document.body.style, 'transform', {
-  value: () => {
-    return {
-      enumerable: true,
-      configurable: true,
-    };
-  },
-});
-
-const mockStorage = () => {
-  let storage = {};
-  return {
-    getItem: (key) => (key in storage ? storage[key] : null),
-    setItem: (key, value) => (storage[key] = value || ''),
-    removeItem: (key) => delete storage[key],
-    clear: () => (storage = {}),
-  };
-};
-
-Object.defineProperty(window, 'localStorage', { value: mockStorage() });
-Object.defineProperty(window, 'sessionStorage', { value: mockStorage() });

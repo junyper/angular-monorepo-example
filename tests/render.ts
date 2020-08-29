@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { configure, render as baseRender} from '@testing-library/angular';
+import { configure, render as _render } from '@testing-library/angular';
 
 configure({
   defaultImports: [],
@@ -8,17 +8,11 @@ configure({
 @Component({ selector: 'test-fixture', template: '' })
 class Fixture {}
 
-const _render =  (...args) => {
+export const render =  (...args) => {
   const [ first, second ] = args;
   if (typeof first === 'function') {
-    return baseRender(first, { ...second, excludeComponentDeclaration: true });
+    return _render(first, { excludeComponentDeclaration: true, ...second });
   } else {
-    return baseRender(Fixture, first);
+    return _render(Fixture, first);
   }
 }
-
-declare global {
-  var render: typeof _render;
-}
-
-export { _render as render };
