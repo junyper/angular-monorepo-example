@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { configure, render as baseRender} from '@testing-library/angular';
 
+configure({
+  defaultImports: [],
+});
+
 @Component({ selector: 'test-fixture', template: '' })
 class Fixture {}
 
@@ -17,16 +21,4 @@ declare global {
   var render: typeof _render;
 }
 
-global.render = _render;
-
-configure({
-  defaultImports: [],
-});
-
-global.console.warn = (message) => {
-  throw message;
-};
-
-global.console.error = (message) => {
-  throw message;
-};
+export { _render as render };

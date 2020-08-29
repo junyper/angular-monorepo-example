@@ -3,16 +3,15 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
-    "types": ["jasmine"],
-    "skipLibCheck": true
+    "types": ["jasmine", "testing-library__jasmine-dom", "puppeteer"]
   },
   "files": [
-    "tests/shared-setup.ts",
+    "tests/render.ts",
     "tests/setup-karma.ts",
     "tests/polyfills.ts"
   ],
   "include": [
-    "src/**/*.spec.ts",
-    "src/**/*.d.ts"
+    "src/app/**/*.spec.ts",
+    "src/app/**/*.d.ts"
   ]
 }

@@ -6,14 +6,16 @@ import { AppModule } from './app.module';
 describe('AppComponent', () => {
   it(`should render the heading text`, async () => {
     await render(AppComponent, { imports: [ AppModule ] });
-    expect(screen.getByText('Hello World'));
+    const heading = await screen.findByText('Hello World');
+    expect(heading).toBeInTheDocument();
   });
-  it(`should render the ng content`, async () => {
-    const content = 'I am an example';
+  it(`should render the projected content`, async () => {
+    const project = 'I am an example';
     await render({
-      imports: [ AppModule ],
-      template: `<app-root>${content}</app-root>`
+      template: `<app-root>${project}</app-root>`,
+      imports: [ AppModule ]
     });
-    expect(screen.getByText(content)).toBeInTheDocument();
+    const content = await screen.findByText(project);
+    expect(content).toBeInTheDocument();
   });
 });

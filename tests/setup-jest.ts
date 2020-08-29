@@ -1,7 +1,17 @@
 import 'jest-preset-angular';
 import '@testing-library/jest-dom';
 
-import './shared-setup';
+import { render } from './render';
+
+global.render = render;
+
+global.console.warn = (message) => {
+  throw message;
+};
+
+global.console.error = (message) => {
+  throw message;
+};
 
 // jsdom polyfills:
 Object.defineProperty(window, 'CSS', { value: null });
