@@ -1,5 +1,8 @@
 import 'jest-preset-angular';
+
+// import matchers
 import '@testing-library/jest-dom';
+import 'jest-axe/extend-expect';
 
 import './polyfills';
 import './globals';

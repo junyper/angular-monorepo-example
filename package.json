@@ -47,6 +47,7 @@
     "finalhandler": "^1.1.2",
     "fs-extra": "^9.0.1",
     "jest": "^26.4.2",
+    "jest-axe": "^3.5.0",
     "jest-preset-angular": "^8.3.1",
     "jsdom-screenshot": "^3.2.0",
     "pretty-format": "^26.4.2",

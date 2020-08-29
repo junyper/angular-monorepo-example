@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/angular';
+import { axe } from 'jest-axe';
 
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
@@ -20,5 +21,9 @@ describe('AppComponent', () => {
     });
     const content = await screen.findByText(project);
     expect(content).toBeInTheDocument();
+  });
+  it(`should be accessible`, async () => {
+    const { container } = await render(AppComponent, { imports: [ AppModule ] });
+    expect(await axe(container)).toHaveNoViolations()
   });
 });
