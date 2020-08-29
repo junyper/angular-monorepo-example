@@ -3,6 +3,8 @@ import { screen } from '@testing-library/angular';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 
+const { render, snapshot } = OtusTestUtils;
+
 describe('AppComponent', () => {
   it(`should render the heading text`, async () => {
     await render(AppComponent, { imports: [ AppModule ] });

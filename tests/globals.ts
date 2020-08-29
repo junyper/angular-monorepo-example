@@ -1,12 +1,17 @@
+
 import { render as _render } from './render';
 import { snapshot as _snapshot } from './snapshot';
 
 declare global {
-  var render: typeof _render;
-  var snapshot: typeof _snapshot;
+  namespace OtusTestUtils {
+    function render(first: unknown, second?: Record<string, unknown>);
+    function snapshot(options?: Record<string, unknown>);
+  }
 }
 
-global.render = _render;
-global.snapshot = _snapshot;
+global.OtusTestUtils = {
+  render: _render,
+  snapshot: _snapshot
+};
 
 export {}

@@ -7,6 +7,7 @@ import connect from 'connect';
 import finalhandler from 'finalhandler';
 import puppeteer from 'puppeteer';
 import { percySnapshot } from '@percy/puppeteer';
+import 'dotenv/config';
 
 import { debug } from './debug';
 
