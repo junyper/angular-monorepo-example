@@ -1,8 +1,12 @@
-import { screen } from '@testing-library/angular';
-import { axe } from 'jest-axe';
-
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
+
+const {
+  axe,
+  screen,
+  render,
+  snapshot
+} = OtusTestUtils;
 
 describe('AppComponent', () => {
   it(`should render the heading text`, async () => {
