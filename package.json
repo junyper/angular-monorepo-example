@@ -1,5 +1,5 @@
 {
-  "name": "example-app",
+  "name": "jest-screenshot-example",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -13,11 +13,6 @@
     "setupFilesAfterEnv": [
       "<rootDir>/tests/setup-jest.ts"
     ]
-  },
-  "browser": {
-    "fs": false,
-    "path": false,
-    "os": false
   },
   "private": true,
   "dependencies": {
