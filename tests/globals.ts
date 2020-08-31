@@ -11,7 +11,7 @@ declare global {
       toHaveNoViolations(options?: unknown): R;
     }
   }
-  namespace OtusTestUtils {
+  namespace TestUtils {
     function render(first: unknown, second?: Record<string, unknown>);
     function snapshot(options?: Record<string, unknown>);
     var screen: typeof _screen;
@@ -19,7 +19,7 @@ declare global {
   }
 }
 
-global.OtusTestUtils = {
+global.TestUtils = {
   render: _render,
   snapshot: _snapshot,
   screen: _screen,
