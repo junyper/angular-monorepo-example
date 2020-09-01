@@ -1,0 +1,23 @@
+{
+  "packages": [
+    "packages/*",
+    "app"
+  ],
+  "command": {
+    "publish": {
+      "contents": "dist",
+      "conventionalCommits": true
+    },
+    "bootstrap": {
+      "hoist": true,
+      "strict": true
+    },
+    "clean": {
+      "yes": true
+    },
+    "run": {
+      "stream": true
+    }
+  },
+  "version": "0.0.0"
+}

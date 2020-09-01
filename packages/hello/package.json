@@ -1,0 +1,30 @@
+{
+  "name": "hello",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "ng build hello",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "button": "^0.0.1",
+    "test-utils": "^0.0.1"
+  },
+  "peerDependencies": {
+    "@angular/common": "^10.0.14",
+    "@angular/core": "^10.0.14",
+    "button": "^0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "publishConfig": {
+    "directory": "dist",
+    "access": "public"
+  },
+  "sideEffects": false
+}

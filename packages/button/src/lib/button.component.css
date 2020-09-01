@@ -1,0 +1,6 @@
+:host button {
+  all: unset;
+  background-color: darkblue;
+  color: white;
+  padding: 1rem;
+}

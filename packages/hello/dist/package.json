@@ -1,0 +1,24 @@
+{
+  "name": "hello",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^10.0.14",
+    "@angular/core": "^10.0.14",
+    "button": "^0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "bundles/hello.umd.js",
+  "module": "fesm2015/hello.js",
+  "es2015": "fesm2015/hello.js",
+  "esm2015": "esm2015/hello.js",
+  "fesm2015": "fesm2015/hello.js",
+  "typings": "hello.d.ts",
+  "metadata": "hello.metadata.json"
+}

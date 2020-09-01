@@ -1,0 +1,23 @@
+{
+  "name": "button",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^10.0.14",
+    "@angular/core": "^10.0.14"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "bundles/button.umd.js",
+  "module": "fesm2015/button.js",
+  "es2015": "fesm2015/button.js",
+  "esm2015": "esm2015/button.js",
+  "fesm2015": "fesm2015/button.js",
+  "typings": "button.d.ts",
+  "metadata": "button.metadata.json"
+}

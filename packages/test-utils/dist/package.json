@@ -1,0 +1,36 @@
+{
+  "name": "test-utils",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^10",
+    "@angular/core": "^10",
+    "jest": "^26"
+  },
+  "dependencies": {
+    "@percy/puppeteer": "^1.1.0",
+    "@testing-library/angular": "^10.0.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@types/jest": "^26.0.10",
+    "connect": "^3.7.0",
+    "dotenv": "^8.2.0",
+    "finalhandler": "^1.1.2",
+    "fs-extra": "^9.0.1",
+    "jest-axe": "^3.5.0",
+    "jest-preset-angular": "^8.3.1",
+    "pretty-format": "^26.4.2",
+    "puppeteer": "^5.2.1",
+    "tslib": "^2.0.0"
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "access": "public"
+  },
+  "sideEffects": false,
+  "main": "bundles/test-utils.umd.js",
+  "module": "fesm2015/test-utils.js",
+  "es2015": "fesm2015/test-utils.js",
+  "esm2015": "esm2015/test-utils.js",
+  "fesm2015": "fesm2015/test-utils.js",
+  "typings": "test-utils.d.ts",
+  "metadata": "test-utils.metadata.json"
+}
