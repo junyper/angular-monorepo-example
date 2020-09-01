@@ -9,13 +9,13 @@
     "button": "^0.0.1",
     "test-utils": "^0.0.1"
   },
+  "dependencies": {
+    "button": "^0.0.1",
+    "tslib": "^2.0.0"
+  },
   "peerDependencies": {
     "@angular/common": "^10.0.14",
-    "@angular/core": "^10.0.14",
-    "button": "^0"
-  },
-  "dependencies": {
-    "tslib": "^2.0.0"
+    "@angular/core": "^10.0.14"
   },
   "browserslist": [
     "last 2 versions",
