@@ -61,10 +61,13 @@ const generateImage = async (url, fileName, options) => {
     ],
   });
   const page = await browser.newPage();
+
   await page.goto(
     url,
     { waitUntil: 'networkidle0' }
   );
+
+  await page.evaluateHandle('document.fonts.ready');
 
   if (process.env.CI) {
     await percySnapshot(page, fileName, options)
