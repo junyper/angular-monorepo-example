@@ -7,13 +7,15 @@ out-tsc
 # Only exists if Bazel was run
 /bazel-out
 
-# dependencies
-node_modules
-
 **/__screenshots__
 **/__snapshots__
 **/__reports__
 **/__coverage__
+
+.env
+
+# dependencies
+node_modules
 
 # profiling files
 chrome-profiler-events*.json

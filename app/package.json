@@ -1,13 +1,14 @@
 {
   "name": "my-app",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "ng build my-app",
+    "start": "ng serve",
+    "build": "ng build",
     "clean": "rm -rf dist"
   },
   "devDependencies": {
-    "test-utils": "^0.0.1"
+    "@my/test-utils": "^0.1.0"
   },
   "dependencies": {
     "@angular/animations": "~10.0.14",
@@ -18,11 +19,12 @@
     "@angular/platform-browser": "~10.0.14",
     "@angular/platform-browser-dynamic": "~10.0.14",
     "@angular/router": "~10.0.14",
-    "hello": "^0.0.1",
-    "lib": "^4.3.0",
+    "@my/components": "^0.1.0",
+    "@my/theme": "^0.1.0",
+    "lodash-es": "^4.17.15",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.3"
+    "zone.js": "~0.11.1"
   },
   "browserslist": [
     "last 2 versions",

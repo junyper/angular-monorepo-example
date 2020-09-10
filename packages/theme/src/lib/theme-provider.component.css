@@ -1,0 +1,7 @@
+:host {
+  font-family: var(--my-font-family-base);
+  font-weight: var(--my-font-weight-normal);
+  line-height: var(--my-line-height-normal);
+  color: var(--my-color-primary-900);
+  background-color: var(--my-color-background);
+}

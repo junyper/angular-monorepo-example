@@ -1,38 +1,43 @@
 {
-  "name": "test-utils",
-  "version": "0.0.1",
+  "name": "@my/test-utils",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "ng build test-utils",
+    "build": "ng build",
     "clean": "rm -rf dist"
   },
+  "devDependencies": {
+    "@types/jest": "^26.0.13",
+    "@types/node": "^14.6.4",
+    "@my/theme": "^0.1.0"
+  },
   "peerDependencies": {
-    "@angular/common": "^10",
     "@angular/core": "^10",
+    "@my/theme": "^0",
     "jest": "^26"
   },
   "dependencies": {
     "@percy/puppeteer": "^1.1.0",
     "@testing-library/angular": "^10.0.2",
     "@testing-library/jest-dom": "^5.11.4",
-    "@types/jest": "^26.0.10",
     "connect": "^3.7.0",
     "dotenv": "^8.2.0",
     "finalhandler": "^1.1.2",
     "fs-extra": "^9.0.1",
-    "jest-axe": "^3.5.0",
+    "jest-axe": "^4.0.0",
     "jest-preset-angular": "^8.3.1",
     "pretty-format": "^26.4.2",
     "puppeteer": "^5.2.1",
-    "tslib": "^2.0.0"
+    "ts-jest": "^26.3.0"
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "access": "public"
   },
   "browserslist": [
     "last 2 versions",
     "not dead",
     "not ie 11"
   ],
-  "publishConfig": {
-    "directory": "dist",
-    "access": "public"
-  },
   "sideEffects": false
 }

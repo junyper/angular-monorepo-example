@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-button',
+  selector: '[my-button]',
   template: `
-    <button>
-      <ng-content></ng-content>
-    </button>
+    <ng-content></ng-content>
   `,
   styleUrls: ['button.component.css']
 })

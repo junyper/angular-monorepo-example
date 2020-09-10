@@ -1,0 +1,25 @@
+{
+  "name": "@my/theme",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "ng build",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "@angular/common": "^10",
+    "@angular/core": "^10",
+    "@angular/platform-browser": "^10",
+    "lodash-es": "^4"
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "access": "public"
+  },
+  "sideEffects": false,
+  "browserslist": [
+    "last 2 versions",
+    "not IE 11",
+    "not dead"
+  ]
+}

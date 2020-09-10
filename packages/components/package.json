@@ -1,16 +1,15 @@
 {
-  "name": "hello",
-  "version": "0.0.1",
+  "name": "@my/components",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "ng build hello",
+    "build": "ng build",
     "clean": "rm -rf dist"
   },
   "devDependencies": {
-    "button": "^0.0.1",
-    "test-utils": "^0.0.1"
+    "@my/test-utils": "^0.1.0"
   },
   "dependencies": {
-    "button": "^0.0.1",
     "tslib": "^2.0.0"
   },
   "peerDependencies": {

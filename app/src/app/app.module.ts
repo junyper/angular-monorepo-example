@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { HelloModule } from 'hello';
+import { ThemeProviderModule } from '@my/theme';
+import { ButtonModule } from '@my/components/button';
 
 import { AppComponent } from './app.component';
 
@@ -11,7 +12,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    HelloModule
+    ButtonModule,
+    ThemeProviderModule
   ],
   providers: [],
   bootstrap: [AppComponent],
