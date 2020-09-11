@@ -1,0 +1,9 @@
+{
+  "name": "@my/components/button",
+  "main": "./index.ts",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts"
+    }
+  }
+}

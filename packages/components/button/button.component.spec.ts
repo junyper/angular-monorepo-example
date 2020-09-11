@@ -1,6 +1,6 @@
 import { axe, render, screenshot } from '@my/test-utils';
 
-import { ButtonModule } from './button.module';
+import { ButtonModule } from '@my/components/button';
 
 describe('ButtonComponent', () => {
   it(`should render the projected content`, async () => {

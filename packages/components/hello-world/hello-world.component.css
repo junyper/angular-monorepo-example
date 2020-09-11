@@ -1,0 +1,5 @@
+:host {
+  display: block;
+  padding: 1rem;
+  background: var(--my-color-secondary-300);
+}

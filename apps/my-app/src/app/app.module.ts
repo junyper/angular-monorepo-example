@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { ThemeProviderModule } from '@my/theme';
-import { ButtonModule } from '@my/components/button';
+import { HelloWorldModule } from '@my/components/hello-world';
 
 import { AppComponent } from './app.component';
 
@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    ButtonModule,
+    HelloWorldModule,
     ThemeProviderModule
   ],
   providers: [],

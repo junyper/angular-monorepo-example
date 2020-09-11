@@ -3,5 +3,19 @@
   "version": 1,
   "newProjectRoot": "packages",
   "projects": {
+    "monorepo": {
+      "projectType": "library",
+      "root": "",
+      "sourceRoot": "",
+      "prefix": "my",
+      "architect": {
+        "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "no-cache": true
+          }
+        }
+      }
+    }
   }
 }

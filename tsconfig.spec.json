@@ -4,6 +4,10 @@
   "compilerOptions": {
     "module": "commonjs",
     "types": ["jest", "node"],
-    "allowJs": true
+    "allowJs": true,
+    "strict": false,
+    "paths": {
+      "@my/components/*": [ "packages/components/dist/*" ]
+    }
   }
 }

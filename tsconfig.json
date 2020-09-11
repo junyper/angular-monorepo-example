@@ -12,6 +12,9 @@
     },
     {
       "path": "./tsconfig.base.json"
+    },
+    {
+      "path": "./tsconfig.lib.json"
     }
   ]
 }

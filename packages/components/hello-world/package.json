@@ -1,0 +1,9 @@
+{
+  "name": "@my/components/hello-world",
+  "main": "./index.ts",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts"
+    }
+  }
+}

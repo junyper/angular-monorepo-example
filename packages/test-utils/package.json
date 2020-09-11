@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "ng": "ng",
     "build": "ng build",
+    "build:watch": "ng build --watch",
     "clean": "rm -rf dist"
   },
   "devDependencies": {
@@ -39,5 +41,12 @@
     "not dead",
     "not ie 11"
   ],
-  "sideEffects": false
+  "sideEffects": false,
+  "ngPackage": {
+    "dest": "dist",
+    "whitelistedNonPeerDependencies": ["."],
+    "lib": {
+      "entryFile": "src/index.ts"
+    }
+  }
 }

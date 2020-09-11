@@ -1,7 +1,7 @@
 :host {
   all: unset;
-  background-color: var(--my-color-primary-700);
-  color: var(--my-color-background);
+  background-color: var(--my-color-primary-700, purple);
+  color: var(--my-color-background, white);
   padding: 1rem;
-  font-family: var(--my-font-family-base);
+  font-family: var(--my-font-family-base, sans-serif);
 }
