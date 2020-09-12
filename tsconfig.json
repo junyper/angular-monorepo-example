@@ -11,12 +11,6 @@
       "path": "./tsconfig.base.json"
     },
     {
-      "path": "./tsconfig.prod.json"
-    },
-    {
-      "path": "./tsconfig.dev.json"
-    },
-    {
       "path": "./tsconfig.lib.json"
     },
     {

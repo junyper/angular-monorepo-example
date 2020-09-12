@@ -6,10 +6,9 @@
     "ng": "ng",
     "start": "lerna run start --scope my-app",
     "build": "lerna run build",
-    "e2e": "ENABLE_SCREENSHOTS=1 ng e2e",
-    "test": "ng test",
-    "test:coverage": "ng test --coverage",
+    "test": "ng test --coverage",
     "test:watch": "ng test --watch",
+    "test:screenshots": "ENABLE_SCREENSHOTS=1 percy exec -- ng test --configuration=screenshots",
     "clean": "rm -rf dist && lerna run clean && lerna clean"
   },
   "private": true,

@@ -1,18 +1,10 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "extends": "./tsconfig.prod.json",
+  "extends": "./tsconfig.spec.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "types": ["jest", "node"],
-    "allowJs": true,
-    "noImplicitAny": false
-  },
-  "exclude": [
-    "**/*.knobs.ts",
-    "__coverage__",
-    "__screenshots__"
-  ],
-  "include": [
-    "**/*.spec.ts",
-    "**.*.d.ts"
-  ]
+    "paths": {
+      "@my/components/*": [ "packages/components/dist/*" ],
+      "@my/*": [ "packages/*/dist" ]
+    }
+  }
 }
