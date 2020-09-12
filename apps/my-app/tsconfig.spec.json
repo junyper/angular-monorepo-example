@@ -2,11 +2,6 @@
 {
   "extends": "../../tsconfig.spec.json",
   "compilerOptions": {
-    "outDir": "./dist/out-tsc/spec",
-    "paths": {}
-  },
-  "include": [
-    "**/*.spec.ts",
-    "**.*.d.ts"
-  ]
+    "outDir": "./dist/out-tsc/spec"
+  }
 }

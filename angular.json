@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "packages",
   "projects": {
-    "monorepo": {
+    "root": {
       "projectType": "library",
       "root": "",
       "sourceRoot": "",
@@ -14,8 +14,17 @@
           "options": {
             "no-cache": true
           }
+        },
+        "e2e": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "no-cache": true,
+            "configPath": "jest.config.screenshots.js",
+            "tsConfig": "tsconfig.screenshots.json"
+          }
         }
       }
     }
-  }
+  },
+  "defaultProject": "root"
 }

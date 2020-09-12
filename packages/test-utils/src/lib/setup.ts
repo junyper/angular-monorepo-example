@@ -1,4 +1,5 @@
 import 'jest-preset-angular';
+import { format } from 'util';
 
 import './matchers';
 import './polyfills';
@@ -6,10 +7,16 @@ import './polyfills';
 // give tests more time as taking screenshots takes a while
 jest.setTimeout(50000);
 
-// force tests to fail w/ console errors
-global.console.warn = (message: any) => {
-  throw message;
+const error = global.console.error;
+
+global.console.error = function(...args) {
+  error(...args);
+  throw new Error(format.apply(null, args));
 };
-global.console.error = (message: any) => {
-  throw message;
+
+const warn = global.console.warn;
+
+global.console.warn = function(...args) {
+  warn(...args);
+  throw new Error(format.apply(null, args));
 };

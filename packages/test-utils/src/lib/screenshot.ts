@@ -32,13 +32,60 @@ const createServer = async html => {
   return server;
 };
 
+const setBreakpoint = async (page) => {
+  // Set timeout to 4 days
+  jest.setTimeout(345600000);
+
+  await page.evaluate(() => {
+    debugger;
+  });
+
+  console.info('\n\n🕵️‍  Code is paused, press enter to resume');
+
+  const KEYS = {
+    CONTROL_C: '\u0003',
+    CONTROL_D: '\u0004',
+    ENTER: '\r',
+  };
+
+  // Run an infinite promise
+  return new Promise(resolve => {
+    const { stdin } = process
+    const onKeyPress = key => {
+      if (
+        key === KEYS.CONTROL_C ||
+        key === KEYS.CONTROL_D ||
+        key === KEYS.ENTER
+      ) {
+        stdin.removeListener('data', onKeyPress);
+        if (!listening) {
+          if (stdin.isTTY) {
+            stdin.setRawMode(false);
+          }
+          stdin.pause();
+        }
+        resolve();
+      }
+    };
+    const listening = stdin.listenerCount('data') > 0;
+    if (!listening) {
+      if (stdin.isTTY) {
+        stdin.setRawMode(true);
+      }
+      stdin.resume();
+      stdin.setEncoding('utf8');
+    }
+    stdin.on('data', onKeyPress);
+  });
+};
+
 const generateImage = async (url, fileName, options) => {
   // Options see:
   // https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions
   const browser = await puppeteer.launch({
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-    // devtools: true,
-    // dumpio: true,
+    devtools: options.debug,
+    dumpio: options.debug,
     args: [
       '--no-sandbox',
       '--disable-lcd-text',
@@ -69,7 +116,11 @@ const generateImage = async (url, fileName, options) => {
 
   await page.evaluateHandle('document.fonts.ready');
 
-  if (process.env.CI) {
+  if (options.debug) {
+    await setBreakpoint(page);
+  }
+
+  if (process.env.CI && process.env.PERCY_TOKEN) {
     await percySnapshot(page, fileName, options)
   } else {
     const image = await page.screenshot(options);
@@ -92,11 +143,14 @@ const getImageFileName = () => {
   return `${state.currentTestName}${index > 0 ? index : ''}`;
 }
 
-const screenshot = async (options = { debug: true }) => {
+const screenshot = async (options = { debug: false }) => {
+  if (!process.env.ENABLE_SCREENSHOTS) return Promise.resolve();
+
   if (options.debug) debug(document);
 
   const fileName = getImageFileName();
   const html = document.documentElement.outerHTML;
+
   const server = await createServer(html);
   const { port } = server.address() as AddressInfo;
   const url = `http://localhost:${port}`;

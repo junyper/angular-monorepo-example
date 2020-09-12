@@ -4,6 +4,6 @@
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "types": ["jest", "node"],
-    "strict": false
+    "noImplicitAny": false
   }
 }

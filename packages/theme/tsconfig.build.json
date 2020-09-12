@@ -3,6 +3,6 @@
   "extends": "../../tsconfig.lib.json",
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
-    "strict": false
+    "noImplicitAny": false
   }
 }

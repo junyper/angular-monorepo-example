@@ -1,7 +1,6 @@
 {
   "$schema": "../../node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "packages",
   "projects": {
     "my-app": {
       "projectType": "application",
@@ -13,11 +12,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/my-app",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.json",
+            "tsConfig": "tsconfig.build.json",
             "preserveSymlinks": true,
             "aot": true,
             "assets": [

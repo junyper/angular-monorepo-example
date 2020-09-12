@@ -1,20 +1,16 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "./tsconfig.prod.json",
   "compilerOptions": {
-    "outDir": "./dist/out-tsc/lib",
-    "declaration": true,
-    "inlineSources": true,
-    "types": []
+    "declaration": true
   },
   "exclude": [
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/*.knobs.ts",
+    "__coverage__",
+    "__screenshots__"
   ],
   "angularCompilerOptions": {
-    "enableIvy": false,
-    "skipTemplateCodegen": true,
-    "strictMetadataEmit": true,
-    "strictInjectionParameters": true,
-    "enableResourceInlining": true
+		"strictMetadataEmit": true,
+		"enableResourceInlining": true
   }
 }

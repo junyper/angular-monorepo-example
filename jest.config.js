@@ -5,7 +5,27 @@ module.exports = {
   ],
   moduleNameMapper: {
     '^lodash-es$': 'lodash',
-    '^@my/components/(.*)$': '<rootDir>/packages/components/dist/$1'
+    '@my/components/(.*)': '<rootDir>/packages/components/$1',
+    '@my/(.*)': '<rootDir>/packages/$1/src/index.ts'
   },
-  modulePathIgnorePatterns: ['dist']
+  modulePathIgnorePatterns: ['dist'],
+  transformIgnorePatterns: [
+		'/node_modules/',
+		'/dist/'
+	],
+  coverageDirectory: '<rootDir>/__coverage__',
+  coverageReporters: ['html', 'text', 'lcov', 'json'],
+  collectCoverageFrom: [
+    '<rootDir>/packages/components/*/**/*.ts',
+    '<rootDir>/packages/*/src/**/*.ts',
+    '<rootDir>/apps/*/src/**/*.ts'
+  ],
+  coveragePathIgnorePatterns: [
+    '__coverage__',
+    '__screenshots__',
+    'node_modules',
+    'dist',
+    'assets',
+    '.*(spec|config|mock|fixture|knobs).ts'
+  ]
 };

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { configure, render as _render } from '@testing-library/angular';
-import { ThemeProviderModule, ThemeProvider } from '@my/theme';
+import { ThemeProviderModule } from '@my/theme';
 
 configure({
   defaultImports: [],
@@ -10,34 +10,13 @@ configure({
   selector: 'test-fixture',
   template: ''
 })
-class Fixture {}
+class TestFixture {}
 
-@Component({
-  selector: 'test-wrapper',
-  template: `
-    <my-theme-provider>
-      <ng-content></ng-content>
-    </my-theme-provider>
-  `
-})
-class Wrapper {}
-
-export const render =  (...args) => {
-  const [ first, second ] = args;
-
-  if (typeof first === 'function') {
-    const { imports, ...options } = second;
-    return _render(first, {
-      imports: [ ThemeProviderModule, ...(imports || []) ],
-      wrapper: Wrapper,
-      ...options
-    });
-  } else {
-    const { imports, ...options } = first;
-    return _render(Fixture, {
-      imports: [ ThemeProviderModule, ...(imports || []) ],
-      wrapper: Wrapper,
-      ...options
-    });
-  }
+export const render = (options: any) => {
+  const { template, imports, ...rest } = options;
+  return _render(TestFixture, {
+    imports: [ ThemeProviderModule, ...(imports || []) ],
+    template: `<my-theme-provider>${template}</my-theme-provider>`,
+    ...rest
+  });
 }

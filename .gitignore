@@ -9,7 +9,6 @@ out-tsc
 
 **/__screenshots__
 **/__snapshots__
-**/__reports__
 **/__coverage__
 
 .env

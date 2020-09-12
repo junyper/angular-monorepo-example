@@ -2,9 +2,6 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
     "skipLibCheck": true,
     "downlevelIteration": true,
     "experimentalDecorators": true,
@@ -15,13 +12,29 @@
     "preserveSymlinks": true,
     "target": "es2015",
     "module": "es2020",
-    "strict": true,
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "emitDecoratorMetadata": true,
+		"strictPropertyInitialization": true,
+		"noImplicitReturns": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"allowUnreachableCode": false,
+		"noUnusedParameters": true,
+		"noUnusedLocals": true,
+		"noFallthroughCasesInSwitch": true,
+		"inlineSourceMap": true,
+		"inlineSources": true,
+    "pretty": true
   },
   "angularCompilerOptions": {
-    "enableIvy": false
+    "enableIvy": false,
+		"annotateForClosureCompiler": true,
+		"skipTemplateCodegen": true,
+		"fullTemplateTypeCheck": true,
+		"strictInjectionParameters": true,
+		"disableTypeScriptVersionCheck": true,
   }
 }
